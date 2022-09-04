@@ -8,7 +8,7 @@ def solution(stringLength):
     such that each letter occurs an odd number of times.
     '''
     if not isinstance(stringLength, int):
-        raise ValueError('parameter must be integer')
+        raise TypeError('parameter must be integer')
     if stringLength < MIN_VALUE or stringLength > MAX_VALUE:
         raise ValueError('parameter must be between {} and {}'.format(MIN_VALUE, MAX_VALUE))
 
