@@ -19,19 +19,16 @@ def solution(word):
     frequencies = getSortedFrequencies(word)
 
     while len(frequencies) > 0 :
-        maxFrequency = frequencies[-1]
-
+        maxFrequency = frequencies.pop()
+        
         if maxFrequency == 0:
             break
 
         amountOfMax = frequencies.count(maxFrequency)
-        if amountOfMax > 1:
+        if amountOfMax > 0:
             insertPosition = len(frequencies) - amountOfMax
             frequencies.insert(insertPosition, maxFrequency - 1)
-            frequencies.pop()
             deletedCounter = deletedCounter + 1
-        else:
-            frequencies.pop()
 
     return deletedCounter
 
